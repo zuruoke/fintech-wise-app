@@ -1,5 +1,6 @@
 import 'package:cashwise/utils/constants.dart';
 import 'package:cashwise/utils/styles.dart';
+import 'package:cashwise/view/pages/home_page/screens/send_funds.dart';
 import 'package:flutter/material.dart';
 
 class DecoratedContainer extends StatelessWidget {
@@ -34,7 +35,10 @@ class DecoratedContainer extends StatelessWidget {
                     width: 91,
                     child: Text(
                       'Set Daily Limit',
-                      style: appTextStyle(fontSize: 12, color: Colors.white),
+                      style: appTextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.white),
                     ),
                     decoration: BoxDecoration(
                         color: Colors.white.withOpacity(.08),
@@ -66,18 +70,28 @@ class DecoratedContainer extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Container(
-                    alignment: Alignment.center,
-                    height: 50,
-                    width: 50,
-                    child: const Icon(
-                      Icons.navigation,
-                      color: Colors.white,
-                      size: 20,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (_) => const SendFunds(
+                                    actionText: "Next",
+                                  )));
+                    },
+                    child: Container(
+                      alignment: Alignment.center,
+                      height: 50,
+                      width: 50,
+                      child: const Icon(
+                        Icons.navigation,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(.4),
+                          borderRadius: BorderRadius.circular(10)),
                     ),
-                    decoration: BoxDecoration(
-                        color: Colors.white.withOpacity(.4),
-                        borderRadius: BorderRadius.circular(10)),
                   ),
                   SizedBox(height: 0.04 * (size.width / 1.65)),
                   Text(
@@ -132,6 +146,31 @@ class DecoratedContainer extends StatelessWidget {
                   SizedBox(height: 0.04 * (size.width / 1.65)),
                   Text(
                     "Pay",
+                    style: appTextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              Column(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    height: 50,
+                    width: 50,
+                    child: const Icon(
+                      Icons.navigation,
+                      color: Colors.white,
+                      size: 20,
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(.4),
+                        borderRadius: BorderRadius.circular(10)),
+                  ),
+                  SizedBox(height: 0.04 * (size.width / 1.65)),
+                  Text(
+                    "Request",
                     style: appTextStyle(
                         fontSize: 14,
                         color: Colors.white,

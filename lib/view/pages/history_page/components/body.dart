@@ -2,6 +2,7 @@ import 'package:cashwise/utils/constants.dart';
 import 'package:cashwise/utils/styles.dart';
 import 'package:cashwise/view/pages/history_page/components/day_tile.dart';
 import 'package:cashwise/view/pages/history_page/components/history_tile.dart';
+import 'package:cashwise/widgets/top_row.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -29,25 +30,7 @@ class _BodyState extends State<Body> {
           SizedBox(
             height: 0.06 * size.height,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    Icons.menu,
-                    size: 30,
-                    color: appColor,
-                  )),
-              IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    Icons.person_add_rounded,
-                    size: 30,
-                    color: appColor,
-                  ))
-            ],
-          ),
+          const TopRowWidget(),
           SizedBox(
             height: 0.06 * size.height,
           ),
@@ -56,7 +39,7 @@ class _BodyState extends State<Body> {
             children: [
               Text(
                 "History",
-                style: appTextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: appTextStyle(fontSize: 24, fontWeight: FontWeight.w500),
               ),
               Container(
                 alignment: Alignment.center,

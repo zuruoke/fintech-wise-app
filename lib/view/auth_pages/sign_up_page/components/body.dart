@@ -54,11 +54,13 @@ class _BodyState extends State<Body> {
             ),
             Text(
               "We are excited ",
-              style: appTextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              style: appTextStyle(
+                  fontSize: 24, fontWeight: FontWeight.w500, color: appColor),
             ),
             Text(
               "to get you started!",
-              style: appTextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+              style: appTextStyle(
+                  fontSize: 24, fontWeight: FontWeight.w500, color: appColor),
             ),
             SizedBox(
               height: 0.05 * size.height,
@@ -76,6 +78,18 @@ class _BodyState extends State<Body> {
               height: 0.025 * size.height,
             ),
             const CustomTextField(text: "Full Name", hintText: "Lynda Uvwajk"),
+            SizedBox(
+              height: 0.025 * size.height,
+            ),
+            const CustomTextField(text: "Email", hintText: "lynda@gmail.com"),
+            SizedBox(
+              height: 0.025 * size.height,
+            ),
+            const CustomTextField(text: "Username", hintText: "@lynda"),
+            SizedBox(
+              height: 0.025 * size.height,
+            ),
+            const CustomTextField(text: "Referal Code", hintText: "1232"),
             SizedBox(
               height: 0.025 * size.height,
             ),
@@ -124,6 +138,9 @@ class _BodyState extends State<Body> {
                       style: appTextStyle(fontSize: 16, color: appColor),
                     )),
               ],
+            ),
+            SizedBox(
+              height: 0.03 * size.height,
             ),
           ],
         ),

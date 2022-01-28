@@ -25,7 +25,10 @@ class CustomTextField extends StatelessWidget {
         children: [
           Text(
             text,
-            style: appTextStyle(fontSize: 16),
+            style: appTextStyle(
+                fontSize: 16,
+                color: const Color(0xFF0B0B0B),
+                fontWeight: FontWeight.w400),
           ),
           DecoratedContainer(
             hintText: hintText,

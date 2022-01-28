@@ -37,24 +37,37 @@ class _TabScreenState extends State<TabScreen> {
     return ClipRect(
         child: CupertinoTabBar(
       backgroundColor: const Color(0xFFFFFFFF),
+      activeColor: appColor,
+      inactiveColor: Colors.grey.shade800,
       onTap: onTapChange,
-      items: [
+      currentIndex: _pageIndex,
+      items: const [
         BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled,
-                size: 28,
-                color: _pageIndex == 0 ? appColor : Colors.grey.shade800)),
+            label: "Home",
+            icon: Icon(
+              Icons.home_filled,
+            )),
         BottomNavigationBarItem(
-            icon: Icon(Icons.settings,
-                size: 28,
-                color: _pageIndex == 1 ? appColor : Colors.grey.shade800)),
+            label: "Tools",
+            icon: Icon(
+              Icons.settings,
+            )),
         BottomNavigationBarItem(
-            icon: Icon(Icons.update_rounded,
-                size: 28,
-                color: _pageIndex == 2 ? appColor : Colors.grey.shade800)),
+            label: "History",
+            icon: Icon(
+              Icons.compare_arrows_rounded,
+            )),
         BottomNavigationBarItem(
-            icon: Icon(Icons.person,
-                size: 28,
-                color: _pageIndex == 3 ? appColor : Colors.grey.shade800)),
+            label: "Alerts",
+            icon: Icon(
+              Icons.notification_add,
+            )),
+        BottomNavigationBarItem(
+            label: "Profile",
+            icon: Icon(
+              Icons.person,
+              size: 28,
+            )),
       ],
     ));
   }
@@ -68,6 +81,7 @@ class _TabScreenState extends State<TabScreen> {
               HomePage(),
               SettingsPage(),
               HistoryPage(),
+              SettingsPage(),
               ProfilePage()
             ],
             controller: pageController,

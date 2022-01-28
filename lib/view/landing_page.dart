@@ -25,14 +25,20 @@ class LandingPage extends StatelessWidget {
           ),
           Align(
             child: Text("How will you be using cashwise?",
-                style: appTextStyle(fontSize: 22)),
+                style: appTextStyle(
+                    fontSize: 22,
+                    color: appColor,
+                    fontWeight: FontWeight.w500)),
           ),
           SizedBox(
             height: 0.01 * size.height,
           ),
           Align(
             child: Text("This will help us personalize your experience",
-                style: appTextStyle(fontSize: 16, color: lightTextColor)),
+                style: appTextStyle(
+                    fontSize: 16,
+                    color: lightTextColor.withOpacity(.32),
+                    fontWeight: FontWeight.w400)),
           ),
           SizedBox(
             height: 0.08 * size.height,

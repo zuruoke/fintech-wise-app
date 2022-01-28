@@ -1,13 +1,21 @@
 import 'package:cashwise/utils/constants.dart';
 import 'package:cashwise/utils/styles.dart';
+import 'package:cashwise/view/pages/profile_page/components/screens/transaction_successful.dart';
 import 'package:cashwise/view/tab_screen.dart';
+import 'package:cashwise/widgets/auth_componets/custom_text_field.dart';
 import 'package:cashwise/widgets/auth_componets/decorated_container.dart';
 import 'package:cashwise/widgets/auth_componets/small_rounded_text_field.dart';
 import 'package:cashwise/widgets/decorated_nav_bar.dart';
 import 'package:flutter/material.dart';
 
-class VerifyNumber extends StatelessWidget {
-  const VerifyNumber({Key? key}) : super(key: key);
+class LinkBVN extends StatefulWidget {
+  const LinkBVN({Key? key}) : super(key: key);
+
+  @override
+  _LinkBVNState createState() => _LinkBVNState();
+}
+
+class _LinkBVNState extends State<LinkBVN> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -26,33 +34,29 @@ class VerifyNumber extends StatelessWidget {
                 ),
                 const DecoratedNavBar(),
                 SizedBox(
-                  height: 0.07 * size.height,
-                ),
-                Align(
-                  child: Text(
-                    "Verify your phone number",
-                    style:
-                        appTextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                SizedBox(
-                  height: 0.01 * size.height,
-                ),
-                Align(
-                  child: Text(
-                    "A code has been sent to +2348144590111.",
-                    style: appTextStyle(fontSize: 16, color: hintColor),
-                  ),
-                ),
-                SizedBox(
-                  height: 0.08 * size.height,
+                  height: 0.04 * size.height,
                 ),
                 Text(
-                  "6-didgit code",
-                  style: appTextStyle(fontSize: 16),
+                  "Link BVN",
+                  style: appTextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w500,
+                      color: appColor),
                 ),
                 SizedBox(
-                  height: 0.02 * size.height,
+                  height: 0.04 * size.height,
+                ),
+                const CustomTextField(text: "BVN", hintText: "223455677890"),
+                SizedBox(
+                  height: 0.04 * size.height,
+                ),
+                Text(
+                  "Insert one-time OTP just received",
+                  style:
+                      appTextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                ),
+                SizedBox(
+                  height: 0.025 * size.height,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -85,33 +89,24 @@ class VerifyNumber extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (_) => const TabScreen()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const TransactionSuccessful(
+                                  title: "BVN Linked!",
+                                  content:
+                                      "You have withdrawn N20,000 to cashwise. Lorem Ipsum, this can be better, honestly",
+                                )));
                   },
                   child: const DecoratedContainer(
                     isPassword: false,
                     isTextField: false,
-                    title: "Verify",
+                    title: "Link BVN",
                     takeAction: true,
                   ),
                 ),
                 SizedBox(
                   height: 0.04 * size.height,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Didn't get the code? ",
-                      style: appTextStyle(fontSize: 16),
-                    ),
-                    InkWell(
-                        onTap: () {},
-                        child: Text(
-                          "Cick to re-send",
-                          style: appTextStyle(fontSize: 16, color: appColor),
-                        )),
-                  ],
                 ),
               ],
             ))));

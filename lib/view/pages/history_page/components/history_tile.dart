@@ -24,13 +24,10 @@ class HistoryTile extends StatelessWidget {
         padding: EdgeInsets.symmetric(
             horizontal: 0.08 * size.width,
             vertical: 0.08 * (size.width / 3.519)),
-        decoration: BoxDecoration(boxShadow: const [
-          BoxShadow(
-              color: Colors.black12,
-              spreadRadius: 2,
-              blurRadius: 1,
-              offset: Offset(0, 3))
-        ], color: Colors.white, borderRadius: BorderRadius.circular(16)),
+        decoration: BoxDecoration(
+            boxShadow: [customBoxShadow()],
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(16)),
         child:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Container(

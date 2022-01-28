@@ -22,13 +22,10 @@ class BudgetStreams extends StatelessWidget {
       width: size.width,
       padding: EdgeInsets.symmetric(
           horizontal: 0.08 * size.width, vertical: 0.08 * (size.width / 4.575)),
-      decoration: BoxDecoration(boxShadow: const [
-        BoxShadow(
-            color: Colors.black12,
-            spreadRadius: 2,
-            blurRadius: 1,
-            offset: Offset(0, 3))
-      ], color: Colors.white, borderRadius: BorderRadius.circular(16)),
+      decoration: BoxDecoration(
+          boxShadow: [customBoxShadow()],
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

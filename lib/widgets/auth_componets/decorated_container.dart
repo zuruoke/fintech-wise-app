@@ -28,7 +28,7 @@ class DecoratedContainer extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
       decoration: BoxDecoration(
           border: Border.all(width: 1.0, color: hintColor),
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(16),
           color: takeAction ? appColor : null),
       child: isTextField
           ? RoundedInputField(

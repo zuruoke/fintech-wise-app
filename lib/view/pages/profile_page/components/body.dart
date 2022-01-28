@@ -2,6 +2,11 @@ import 'package:cashwise/utils/constants.dart';
 import 'package:cashwise/utils/styles.dart';
 import 'package:cashwise/view/pages/profile_page/components/profile_pic_tile.dart';
 import 'package:cashwise/view/pages/profile_page/components/profile_tile.dart';
+import 'package:cashwise/view/pages/profile_page/components/screens/add_friends.dart';
+import 'package:cashwise/view/pages/profile_page/components/screens/debit_cards.dart';
+import 'package:cashwise/view/pages/profile_page/components/screens/my_accounts.dart';
+import 'package:cashwise/view/pages/profile_page/components/screens/view_balance.dart';
+import 'package:cashwise/widgets/top_row.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatefulWidget {
@@ -27,25 +32,7 @@ class _BodyState extends State<Body> {
           SizedBox(
             height: 0.06 * size.height,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    Icons.menu,
-                    size: 30,
-                    color: appColor,
-                  )),
-              IconButton(
-                  onPressed: null,
-                  icon: Icon(
-                    Icons.person_add_rounded,
-                    size: 30,
-                    color: appColor,
-                  ))
-            ],
-          ),
+          const TopRowWidget(),
           SizedBox(
             height: 0.06 * size.height,
           ),
@@ -105,7 +92,11 @@ class _BodyState extends State<Body> {
           SizedBox(
             height: 0.07 * size.height,
           ),
-          const ProfileTile(
+          ProfileTile(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const MyAccount()));
+            },
             iconData: Icons.person,
             title: "My Account",
             subTitle: "Manage your profile.",
@@ -113,7 +104,11 @@ class _BodyState extends State<Body> {
           SizedBox(
             height: 0.04 * size.height,
           ),
-          const ProfileTile(
+          ProfileTile(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (_) => const DebitCards()));
+            },
             iconData: Icons.payment,
             title: "Debit Cards",
             subTitle: "Add/remove debit cards.",
@@ -121,11 +116,14 @@ class _BodyState extends State<Body> {
           SizedBox(
             height: 0.04 * size.height,
           ),
-          const ProfileTile(
-            iconData: Icons.account_balance_wallet_rounded,
-            title: "Balance",
-            subTitle: "View history of completed resources.",
-          ),
+          ProfileTile(
+              iconData: Icons.account_balance_wallet_rounded,
+              title: "Balance",
+              subTitle: "View history of completed resources.",
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const ViewBalance()));
+              }),
           SizedBox(
             height: 0.04 * size.height,
           ),
@@ -136,6 +134,27 @@ class _BodyState extends State<Body> {
           ),
           SizedBox(
             height: 0.04 * size.height,
+          ),
+          const ProfileTile(
+            iconData: Icons.qr_code_outlined,
+            title: "Cashwise QR tag",
+            subTitle: "View history of completed courses.",
+          ),
+          SizedBox(
+            height: 0.04 * size.height,
+          ),
+          ProfileTile(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (_) => const AddFriend(
+                            text: "Add Friend",
+                          )));
+            },
+            iconData: Icons.person_add,
+            title: "Add friend",
+            subTitle: "Add friends to your cashwise.",
           ),
         ])));
   }

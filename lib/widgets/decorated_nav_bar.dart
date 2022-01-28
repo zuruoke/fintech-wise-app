@@ -6,16 +6,22 @@ class DecoratedNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40,
-      width: 40,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          color: hintColor, borderRadius: BorderRadius.circular(12)),
-      child: const Icon(
-        Icons.arrow_back_ios,
-        size: 16,
-        color: black,
+    return InkWell(
+      onTap: () {
+        Navigator.pop(context);
+      },
+      child: Container(
+        height: 40,
+        width: 40,
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+        decoration: BoxDecoration(
+            color: const Color(0xFFF2EFFF),
+            borderRadius: BorderRadius.circular(12)),
+        child: const Icon(
+          Icons.arrow_back_ios,
+          size: 16,
+          color: appColor,
+        ),
       ),
     );
   }

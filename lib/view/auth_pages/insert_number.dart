@@ -25,11 +25,7 @@ class InsertNumber extends StatelessWidget {
                 SizedBox(
                   height: 0.07 * size.height,
                 ),
-                InkWell(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: const DecoratedNavBar()),
+                const DecoratedNavBar(),
                 SizedBox(
                   height: 0.07 * size.height,
                 ),
